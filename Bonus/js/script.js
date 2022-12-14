@@ -55,12 +55,13 @@ let contenitore = document.querySelector(`.container`)
 let riga
 
 for (let i = 0; i < array_team.length; i++) {
-
+    let image = document.createElement(`img`)
+    image.src = `./img/` + array_team[i].photo
     riga = document.createElement(`div`)
-    riga.classList.add(`riga`, `my_img`)
-    riga.innerText = `nome: ${array_team[i].name} Ruolo: ${array_team[i].role} Foto: ${array_team[i].photo}`
+    riga.classList.add(`riga`)
+    riga.innerHTML = `<p>nome: ${array_team[i].name} Ruolo: ${array_team[i].role}</p>`
+    riga.append(image)
     contenitore.append(riga)
     console.log(riga)
 }
 
-document.getElementById(`my_img`).src= "wayne-barnett-founder-ceo.jpg"
